@@ -126,6 +126,10 @@ Requires Node.js 24, Bun, and AWS CLI for deployment.
 
 Demo settings: public `ApplicationManaged` access, two environments maximum, sixteen concurrent requests each, ten-second timeout, and 100 RPS limit. Add authentication before serving private data. These limits are not a spending guarantee.
 
+## Architecture
+
+[Open the editable draw.io diagrams and checked PNG/SVG exports](./docs/architecture/README.md). Three pages cover the deployed API, cdkd setup, and hosting comparison, using official AWS icons.
+
 ## Results
 
 Verified on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2:

@@ -1,33 +1,31 @@
 # Architecture Diagrams
 
-Open [hono-web-functions-architecture.drawio](./hono-web-functions-architecture.drawio) in draw.io. It contains three editable pages with official AWS SVG icons embedded in the file. No icon download or cloud connection is required to edit it.
+Open [hono-web-functions-architecture.drawio](./hono-web-functions-architecture.drawio) in draw.io. Three short diagrams use large official AWS icons and editable arrows/labels.
 
-## Pages
-
-| Page | Shows | Status |
-|---|---|---|
-| 1 Reading-list runtime | HTTPS endpoint, Hono, DynamoDB, Secrets Manager, CloudWatch, execution role | Matches the deployed Tokyo POC |
-| 2 Deployment with cdkd | CDK app, cdkd CLI, AWS APIs, S3 state/assets/code, revision update order | Matches the deployment workflow; helper resources are summarized |
-| 3 Hosting comparison | API Gateway + default Lambda, ECS/Fargate with ALB, Web Functions | Conceptual alternatives; only the expanded Web Functions reading list was deployed |
+| Page | Meaning |
+|---|---|
+| 1 Our app | A browser uses Hono on a Web Function; DynamoDB stores links. Secrets Manager and CloudWatch support the app. |
+| 2 Deploying our app | CDK defines the resources, cdkd deploys, S3 stores the code, and Lambda runs it. |
+| 3 Three hosting options | The same API through API Gateway + Lambda, ECS/Fargate with a load balancer, or Web Functions. |
 
 ## Open and Edit
 
-1. Open draw.io Desktop, or [app.diagrams.net](https://app.diagrams.net/). Choose **File > Open From > Device** and select the `.drawio` file.
-2. Select a page tab along the bottom. Text, shapes, grouped service cards, and connectors are editable. The AWS icons are embedded SVG artwork.
-3. Export the current page using **File > Export As > SVG** or **PNG**. Use a white background and keep text readable. The checked exports below are ready to use.
+1. In draw.io, choose **File > Open From > Device** and select the file.
+2. Choose a page tab. Move or edit the icons, labels, and connectors.
+3. Use **File > Export As > SVG** or **PNG**, or use the checked exports below.
 
-## Blog Exports
+## Exports
 
-- Runtime: [SVG](./architecture-runtime.svg), [PNG](./architecture-runtime.png).
+- App: [SVG](./architecture-runtime.svg), [PNG](./architecture-runtime.png).
 - Deployment: [SVG](./architecture-deployment.svg), [PNG](./architecture-deployment.png).
 - Comparison: [SVG](./architecture-comparison.svg), [PNG](./architecture-comparison.png).
 
-Exports were rendered with draw.io Desktop 32.4.1 and visually checked. No account IDs, ARNs, generated domains, resource names, or tokens are included.
+Rendered with draw.io Desktop 32.4.1 and visually checked.
 
-## Icon Sources and Scope
+## Sources and Simplification
 
-Artwork comes from the [official AWS architecture icon package](https://aws.amazon.com/architecture/icons/), release 2026-07-31. The [source manifest](./aws-icon-sources.json) records the exact package URL, selected filenames, and SHA-256 values. The embedded AWS icon bytes are unchanged.
+The icons are unchanged SVG artwork from the [official AWS icon package](https://aws.amazon.com/architecture/icons/), release 2026-07-31. This includes the AWS cloud mark, client, Lambda, DynamoDB, S3, API Gateway, ECS, Fargate, load balancer, Secrets Manager, CloudWatch, and CDK icons. The [source manifest](./aws-icon-sources.json) records filenames and SHA-256 values.
 
-The package has no dedicated Web Functions icon. The generic official Lambda icon is labelled **Web Function**. Hono, cdkd, and the HTTPS endpoint use ordinary text boxes rather than invented AWS service icons.
+Web Functions use the generic official Lambda icon because this package has no dedicated Web Functions artwork. cdkd is a separate tool, represented by a plain label.
 
-These diagrams describe this POC; they are not an AWS-published reference architecture. The regional boundary is not a VPC. IAM is shown outside that boundary because it is an account-wide service. The comparison leaves out shared authentication, logging, packaging, and networking details for readability.
+These are simplified views of our POC, not AWS-published reference architectures. Only the Web Functions reading list was deployed. The comparison alternatives are conceptual. The app view omits explicit IAM and endpoint configuration; the deployment view omits state/asset buckets, AWS control APIs, deployment helpers, and revision update steps. The article and tested stack explain those details.

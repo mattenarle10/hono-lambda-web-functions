@@ -128,7 +128,7 @@ Demo settings: public `ApplicationManaged` access, two environments maximum, six
 
 ## Architecture
 
-[Open the editable draw.io diagrams and checked PNG/SVG exports](./docs/architecture/README.md). Three pages cover the deployed API, cdkd setup, and hosting comparison, using official AWS icons.
+[Open the editable draw.io diagrams and checked PNG/SVG exports](./docs/architecture/README.md). Three simple pages cover the deployed API, cdkd setup, and hosting comparison, with large official AWS icons and short labels.
 
 ## Results
 

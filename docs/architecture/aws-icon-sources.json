@@ -2,7 +2,7 @@
   "source": "https://aws.amazon.com/architecture/icons/",
   "packageUrl": "https://d1.awsstatic.com/onedam/marketing-channels/website/public/shared/architecture-icon-release/Icon-package_07312026.5846e92413caa21490223536cc97f1269e44fa92.zip",
   "release": "2026-07-31",
-  "note": "Official AWS SVG artwork embedded unchanged. Generic Lambda icon represents labelled Web Function resources; no dedicated Web Functions artwork exists in this package.",
+  "note": "Official AWS SVG bytes embedded unchanged. Lambda uses the standard Lambda service icon. Simplified diagrams omit supporting deployment/IAM resources; details remain in the article.",
   "icons": [
     {
       "service": "lambda",
@@ -10,7 +10,7 @@
       "sha256": "5818c80cd8e7d08891a2492c7694f472ca914fb3a99d9ef8e597db0b37ad7f13"
     },
     {
-      "service": "dynamo",
+      "service": "db",
       "file": "Architecture-Service-Icons_07312026/Arch_Databases/64/Arch_Amazon-DynamoDB_64.svg",
       "sha256": "ed169f049cc24c954cfbe3d14695d5b022558c45e5605936a565d1347c14b664"
     },
@@ -25,19 +25,14 @@
       "sha256": "a84b5b88172ab39170eaa6154345332d755758a37cda6a5580981cf679e01c0b"
     },
     {
-      "service": "s3",
-      "file": "Architecture-Service-Icons_07312026/Arch_Storage/64/Arch_Amazon-Simple-Storage-Service_64.svg",
-      "sha256": "b92c5101cc6565dd12df37655802279f8fba0c719279f62f93106d26750b36c6"
-    },
-    {
-      "service": "iam",
-      "file": "Architecture-Service-Icons_07312026/Arch_Security-Identity/64/Arch_AWS-Identity-and-Access-Management_64.svg",
-      "sha256": "3135793557c065d0481a3985ccc0574b36278d56a2e2c5d59107d0d28f51b827"
-    },
-    {
       "service": "cdk",
       "file": "Architecture-Service-Icons_07312026/Arch_Developer-Tools/64/Arch_AWS-Cloud-Development-Kit_64.svg",
       "sha256": "3550bd277c5199d745dd49cd2f40178f843e8567ec3a5550cfe8b77cc2c89610"
+    },
+    {
+      "service": "s3",
+      "file": "Architecture-Service-Icons_07312026/Arch_Storage/64/Arch_Amazon-Simple-Storage-Service_64.svg",
+      "sha256": "b92c5101cc6565dd12df37655802279f8fba0c719279f62f93106d26750b36c6"
     },
     {
       "service": "gateway",
@@ -58,6 +53,16 @@
       "service": "alb",
       "file": "Resource-Icons_07312026/Res_Networking-Content-Delivery/Res_Elastic-Load-Balancing_Application-Load-Balancer_48.svg",
       "sha256": "27bea44fffd83cc42ce68411e659761a114d41d6b89efc556afef969f96414aa"
+    },
+    {
+      "service": "client",
+      "file": "Resource-Icons_07312026/Res_General-Icons/Res_48_Light/Res_Client_48_Light.svg",
+      "sha256": "5c0eb210ca9cca0f53c136eb524273ce5ad90e40545752aeadb129bdcb2af0f3"
+    },
+    {
+      "service": "aws",
+      "file": "Architecture-Group-Icons_07312026/AWS-Cloud-logo_32.svg",
+      "sha256": "63d73df1aac59dab323df732f82e196e359fb7b6370c0ca8e51e7b897cd350be"
     }
   ]
 }

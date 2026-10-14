@@ -1,60 +1,63 @@
 # Hono on Lambda Web Functions with cdkd
 
-A normal Node.js HTTP server, defined with AWS CDK and deployed with **cdkd (CDK Direct)**. This is a disposable, public API demo.
+A small Hono API running as a normal Node.js 24 HTTP server on AWS Lambda Web Functions. CDK defines the resources; **cdkd (CDK Direct)** deploys them through AWS APIs and manages state in S3.
 
 ```txt
-Client -> Web Function HTTPS endpoint -> Node.js 24 HTTP server -> Hono
-CDK app -> cdkd -> service SDK / Cloud Control API -> AWS resources
+Client -> Web Function HTTPS endpoint -> Node.js HTTP server -> Hono
+CDK app -> cdkd -> service SDK / Cloud Control -> AWS resources
 ```
 
-cdkd is a separate CLI from AWS CDK CLI. It manages its own state instead of creating a CloudFormation stack. The direct POC was deployed and updated successfully. The earlier CloudFormation POC was measured, then destroyed after the new API passed.
+This is a public, disposable POC. [cdkd is intended for dev/test](https://cdkd.dev/getting-started/).
 
 ## Routes
 
-The contracts come from [hono-serverless](https://github.com/mattenarle10/hono-serverless):
-
-| Route | Expected result |
+| Route | Response |
 |---|---|
-| `GET /health` | `200`, `{"ok":true}` |
-| `GET /profile` | `200`, the public profile |
-| `GET /doc` | `200`, OpenAPI with health and profile |
-| `GET /scalar` | `200`, API reference HTML loading `/doc` |
-| `GET /missing` | `404` |
+| `/health` | `200`, `{"ok":true}` |
+| `/profile` | `200`, public profile |
+| `/doc` | `200`, OpenAPI for health and profile |
+| `/scalar` | `200`, API reference loading `/doc` |
+| `/missing` | `404` |
 
-## Run Locally
+## Local Setup
 
-1. Clone the sample and select Node.js 24:
+Requires Node.js 24, Bun, and AWS CLI for deployment.
+
+1. Clone and install:
 
    ```sh
    git clone https://github.com/mattenarle10/hono-lambda-web-functions.git
    cd hono-lambda-web-functions
    nvm use
+   bun install --frozen-lockfile --ignore-scripts
+   export PATH="$PWD/node_modules/.bin:$PATH"
+   cdkd --version
    ```
 
-2. Install locked dependencies and check the app:
+   The PATH change applies to this shell and selects the repo's pinned **cdkd 0.299.1**. If `cdkd` is unavailable, replace it in the commands below with `bunx --no-install cdkd`. Bun still runs the local TypeScript app and tests; AWS runs Node.js 24.
+
+2. Check and start the app:
 
    ```sh
-   bun install --frozen-lockfile --ignore-scripts
    bun run typecheck
    bun run test
    bun run smoke
-   ```
-
-   Bun runs the CDK TypeScript app and tests. The deployed server runs Node.js 24. The smoke command synthesizes with a placeholder account and runs the exact staged server files under Node.js 24. It checks the supplied listen address, four routes, `404`, and eight concurrent health requests.
-
-3. Start the app:
-
-   ```sh
    bun run dev
    ```
 
-   Check `http://127.0.0.1:3000/health` in another terminal. The optional `bun run build` and `bun run start` commands run the compiled server locally.
+   Smoke runs the staged deployment files locally. It does not deploy. In another terminal:
+
+   ```sh
+   curl --fail-with-body http://127.0.0.1:3000/health
+   ```
+
+   Open `http://127.0.0.1:3000/scalar` for API docs.
 
 ## Deploy with cdkd
 
-**These commands create billable resources and a public endpoint.** Use an existing short-lived sandbox profile. Verify the identity before creating anything.
+**Creates billable resources and a public endpoint.** Use a short-lived sandbox profile. This sample uses Tokyo; Singapore was absent from the [Web Functions launch region list](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/).
 
-1. Set the target. Replace the account placeholder with your confirmed sandbox account:
+1. Set and verify the target:
 
    ```sh
    export AWS_PROFILE=your-aws-profile
@@ -64,133 +67,92 @@ The contracts come from [hono-serverless](https://github.com/mattenarle10/hono-s
    aws sts get-caller-identity --profile "$AWS_PROFILE" --region "$AWS_REGION"
    ```
 
-   Stop if the identity does not match. Singapore was absent from the Web Functions launch region list; this sample uses Tokyo. Do not put credentials into source or `.env` files.
+   Replace the account placeholder. Stop if the returned identity differs.
 
-2. Review and run cdkd bootstrap:
+2. Review and bootstrap once for the target account/region:
 
    ```sh
-   bun run bootstrap --profile "$AWS_PROFILE" --region "$AWS_REGION"
+   cdkd bootstrap --profile "$AWS_PROFILE" --region "$AWS_REGION"
    ```
 
-   This is **cdkd bootstrap**, separate from `cdk bootstrap`. It creates a versioned, encrypted state bucket, an encrypted regional asset bucket, an immutable-tag ECR asset repository, and an asset-storage marker. These persist after application cleanup. No CDK CloudFormation execution role is needed. [cdkd bootstrap](https://cdkd.dev/cli-bootstrap/index.html)
+   [cdkd bootstrap](https://cdkd.dev/cli-bootstrap/index.html) creates encrypted state/asset storage and an ECR asset repository. It is separate from `cdk bootstrap` and persists after app cleanup.
 
-3. Preview, then deploy:
+3. Preview, then review the deployment confirmation:
 
    ```sh
-   bun run diff --profile "$AWS_PROFILE"
-   bun run deploy --profile "$AWS_PROFILE"
+   cdkd diff HonoLambdaWebDirectStack \
+     --no-cfn-fallback --state-prefix hono-web-poc --profile "$AWS_PROFILE"
+   cdkd deploy HonoLambdaWebDirectStack \
+     --no-cfn-fallback --strict-getatt --require-approval any-change \
+     --state-prefix hono-web-poc --profile "$AWS_PROFILE"
    ```
 
-   The scripts call pinned `cdkd` 0.299.1 directly. Deployment uses `--require-approval any-change`, `--strict-getatt`, and `--no-cfn-fallback`. Keep prompts enabled. The POC state is isolated under `--state-prefix hono-web-poc`.
+   Keep approval prompts enabled. cdkd owns this POC under `hono-web-poc`; there is no application CloudFormation stack.
 
-   The logical stack name is `HonoLambdaWebDirectStack`; its Web Function is `hono-lambda-web-direct-poc`. A cdkd deployment does not appear as an application stack in the CloudFormation console.
-
-4. Inspect outputs from cdkd state and check the API:
+4. Read `EndpointUrl` and verify:
 
    ```sh
-   bunx --no-install cdkd state show HonoLambdaWebDirectStack \
-     --state-prefix hono-web-poc \
-     --profile "$AWS_PROFILE"
+   cdkd state show HonoLambdaWebDirectStack \
+     --state-prefix hono-web-poc --profile "$AWS_PROFILE"
    export ENDPOINT_URL='https://your-endpoint-domain'
-   curl --fail-with-body "$ENDPOINT_URL/health"
+   curl --include --fail-with-body "$ENDPOINT_URL/health"
    curl --fail-with-body "$ENDPOINT_URL/profile"
    curl --fail-with-body "$ENDPOINT_URL/doc"
    curl --fail-with-body "$ENDPOINT_URL/scalar"
    ```
 
-   Replace the URL placeholder with `EndpointUrl`. Open `/scalar` in a browser to confirm both routes render; an HTML response alone does not prove its external UI script loaded.
+   Replace the URL placeholder. Open `/scalar` in a browser too. An HTML response alone does not prove its UI loaded.
 
-5. Verify logs using a response's exact stream:
+   For startup logs, use the response's `lambda-web-logstream` header to read the exact stream in `/aws/lambda/web/hono-lambda-web-direct-poc.local`. Both app log groups retain seven days. [AWS logging](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-logging.html)
 
-   ```sh
-   curl --include --fail-with-body "$ENDPOINT_URL/health"
-   export LAMBDA_WEB_LOGSTREAM='paste-the-lambda-web-logstream-header-value'
-   aws logs get-log-events \
-     --log-group-name /aws/lambda/web/hono-lambda-web-direct-poc.local \
-     --log-stream-name "$LAMBDA_WEB_LOGSTREAM" \
-     --start-from-head --limit 100 --no-paginate \
-     --profile "$AWS_PROFILE" --region "$AWS_REGION"
-   ```
+## Code and Updates
 
-   Web Functions write to the regional `.local` group before asynchronous centralization. Both groups have seven-day retention. Their creation and stream-writing ARN permissions are explicit and scoped to these two names. An empty early search is not proof that no logs arrived. [AWS logging guidance](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-logging.html)
+- [`src/server.ts`](./src/server.ts) listens on AWS's `AWS_LAMBDA_HTTP_ENDPOINT`, with a localhost fallback.
+- [`lib/bundle.ts`](./lib/bundle.ts) bundles the server. CDK assets and cdkd handle packaging/upload; no manual ZIP step.
+- [`lib/web-stack.ts`](./lib/web-stack.ts) defines private, versioned code storage and scoped permissions. New Web Function types use Cloud Control.
+- Revision logical IDs include the bundle hash: create the new revision, switch the stable endpoint, then remove the old revision. This order passed the update trials.
 
-## How Packaging and Updates Work
+Demo settings: public `ApplicationManaged` access, two environments maximum, sixteen concurrent requests each, ten-second timeout, and 100 RPS limit. Add authentication before serving private data. These limits are not a spending guarantee.
 
-`lib/bundle.ts` uses esbuild to write only `index.js` and a CommonJS `package.json`. A CDK S3 `Asset` stages those files; cdkd packages and uploads them. AWS requires a ZIP internally, but there is no manual ZIP or upload step.
+## Results
 
-`BucketDeployment` copies that asset into a dedicated private, versioned, SSL-only code bucket with `extract: false`. The Lambda service gets package-read permission scoped to this Web Function's revisions. Existing package versions remain available during updates.
+Verified on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2:
 
-Web Functions, revisions, and endpoints are deployed through cdkd's documented Cloud Control path when no dedicated SDK provider exists. Tokyo reported the function and endpoint types `FULLY_MUTABLE`, and the revision type `IMMUTABLE`. [cdkd resource coverage](https://cdkd.dev/supported-resources/index.html)
+- Nine tests, typecheck, cdkd synthesis, and staged-server smoke passed.
+- Direct deployment, three updates, restoration, four HTTPS routes, expected 404, and startup logs passed.
+- Matthew confirmed Scalar renders manually in a browser.
+- Each deployment path passed 900 measured HTTP requests. The old CloudFormation POC and four owned helper-log remnants were deleted.
 
-The immutable revision's logical ID includes the bundled output hash. On a code change, cdkd creates a new revision, updates the stable endpoint reference, and deletes the old logical resource after the create/update phase. This avoids attempting an in-place revision update or deleting a revision still serving the endpoint.
+Median code-update command time: **45.664 s with cdkd**, versus **79.264 s through CloudFormation**, excluding manual approval waiting. Three trials per tool. HTTP samples do not establish a CLI-caused runtime speedup or cost savings.
 
-The endpoint has public `ApplicationManaged` access, two execution environments maximum, sixteen concurrent requests per environment, a ten-second request timeout, and a 100 RPS limit. These are demo settings, not production guidance or a spending guarantee. Positive request limits start at 100; the earlier deployment rejected 10. [AWS scaling settings](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-scaling.html)
+The first direct create failed with an S3 bucket-policy `socket hang up`; rollback completed and the same configuration succeeded on retry. Root cause remains unknown. The CDK validator also warns about the new resource types; those warnings remain visible.
 
-## Benchmarks
-
-The experiment measures matched code updates through CloudFormation and cdkd, and repeated `/health` latency samples from the same macOS Arm64 laptop to Tokyo. Bootstrap, first creation, and cleanup are recorded separately from update timing.
-
-The HTTP script uses Node.js 24, keep-alive connections, three rounds, ten warm-up requests per phase, 100 sequential samples, and 200 samples with a concurrency cap of eight. Request starts are paced on a 50-per-second schedule. It saves raw latency samples and failures without account, endpoint, request, or log-stream identifiers:
+[Benchmark method and raw results](./benchmarks/README.md). To rerun HTTP samples after setting `ENDPOINT_URL`:
 
 ```sh
-BENCH_LABEL=cdkd \
-BENCH_OUTPUT=benchmarks/results/cdkd-http.json \
-bun run bench:http
+BENCH_LABEL=cdkd BENCH_OUTPUT=benchmarks/results/cdkd-http.json \
+  node scripts/bench-http.mjs
 ```
 
-Set `ENDPOINT_URL` first. These measurements include network and body-read time. The client's physical location and network path were not measured or controlled. They do not establish cold-start latency, maximum throughput, AI workload behavior, or cost savings. CLI choice should not itself change the HTTP runtime.
+## Cleanup
 
-[Completed measurements and raw data](./benchmarks/README.md): three update trials per tool and 900 successful HTTP samples per deployment. Median update command time was 45.664 s with cdkd versus 79.264 s through CloudFormation, excluding approval waiting. These results apply only to this POC. The comparison records approval waiting separately and does not use `--no-wait` or skipped stabilization. The CLI's printed duration can include time spent waiting at a confirmation prompt; do not compare that directly with an unattended run.
+**Deletes app code, object versions, logs, endpoint, revisions, function, and stack roles.** Save sanitized evidence first.
 
-For a timed update, make the same small code change in a disposable checkout and keep manual approval enabled:
-
-```sh
-NODE_DISABLE_COMPILE_CACHE=1 \
-python3 scripts/time-command.py \
-  --label cdkd-update-1 \
-  --output benchmarks/results/deployment-timings.json \
-  -- bun run deploy --profile "$AWS_PROFILE"
-```
-
-The timer preserves the interactive prompt and records total wall time, approval waiting, and wall time excluding that waiting. Failed commands are retained with their exit code. No command arguments or live AWS identifiers enter the results file.
-
-## Cleanup: Deletes Application Resources and Evidence
-
-1. Save sanitized evidence, verify identity, and inspect this POC's state:
+1. Verify identity and inspect the owned state:
 
    ```sh
    aws sts get-caller-identity --profile "$AWS_PROFILE" --region "$AWS_REGION"
-   bunx --no-install cdkd state show HonoLambdaWebDirectStack \
+   cdkd state show HonoLambdaWebDirectStack \
      --state-prefix hono-web-poc --profile "$AWS_PROFILE"
    ```
 
 2. Review the deletion confirmation:
 
    ```sh
-   bun run destroy --profile "$AWS_PROFILE"
+   cdkd destroy HonoLambdaWebDirectStack \
+     --state-prefix hono-web-poc --profile "$AWS_PROFILE"
    ```
 
-   This deletes the endpoint, revisions, function, code bucket and object versions, app log groups, and stack roles. Check for leftover helper log groups and confirm both cdkd state and AWS resource deletion. A failed command is not cleanup evidence.
+   Verify deletion in cdkd state and AWS; check for leftover helper logs. Shared cdkd bootstrap storage and any existing `CDKToolkit` remain.
 
-   The cdkd bootstrap storage and any previously approved `CDKToolkit` remain. Do not destroy shared bootstrap storage while another stack uses it. No database, Bedrock calls, or AgentCore resources are included.
-
-## Verification Record
-
-Prepared on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2.
-
-| Check | Result |
-|---|---|
-| Contracts and infrastructure | Nine tests passing |
-| TypeScript | Passed |
-| cdkd CLI, synthesis, and staged-server smoke | Passed |
-| cdkd bootstrap and deployment dry-run | Passed in the confirmed Tokyo sandbox |
-| Direct deployment and updates | Passed; three timed code updates and restoration kept the endpoint URL |
-| HTTPS contracts | Four routes and expected 404 passed |
-| Direct startup logs | Verified in an exact regional stream |
-| HTTP measurements | 900 measured requests per deployment, all passed |
-| Old POC cleanup | CloudFormation stack/resources and four exactly owned helper logs deleted |
-| Scalar browser rendering | Unverified |
-
-The pinned CDK library's bundled validator warns about the new Web Function resource types. The warnings remain visible; local synthesis is not a cloud deployment test. cdkd is documented as a dev/test tool. Keep this sample a POC. [cdkd getting started](https://cdkd.dev/getting-started/)
-
-Before sharing screenshots, blur account IDs, ARNs, role names, generated bucket names, endpoint domains, and private data. Never commit credentials, resolved state, `.env`, `build/`, or `cdk.out/`.
+Before sharing screenshots, blur account IDs, ARNs, generated names, endpoint domains, and private data. Never commit credentials, resolved state, `.env`, `build/`, or `cdk.out/`.

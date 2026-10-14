@@ -7,7 +7,7 @@ Client -> Web Function HTTPS endpoint -> Node.js 24 HTTP server -> Hono
 CDK app -> cdkd -> service SDK / Cloud Control API -> AWS resources
 ```
 
-cdkd is a separate CLI from AWS CDK CLI. It manages its own state instead of creating a CloudFormation stack. The earlier CloudFormation POC is being used as a benchmark baseline; direct deployment results will be recorded after verification.
+cdkd is a separate CLI from AWS CDK CLI. It manages its own state instead of creating a CloudFormation stack. The direct POC was deployed and updated successfully. The earlier CloudFormation POC was measured, then destroyed after the new API passed.
 
 ## Routes
 
@@ -130,7 +130,7 @@ The endpoint has public `ApplicationManaged` access, two execution environments 
 
 The experiment measures matched code updates through CloudFormation and cdkd, and repeated `/health` latency samples from the same macOS Arm64 laptop to Tokyo. Bootstrap, first creation, and cleanup are recorded separately from update timing.
 
-The HTTP script uses Node.js 24, keep-alive connections, three rounds, ten warm-up requests per phase, 100 sequential samples, and 200 samples with a concurrency cap of eight. Request starts are paced at no more than 50 per second. It saves raw latency samples and failures without account, endpoint, request, or log-stream identifiers:
+The HTTP script uses Node.js 24, keep-alive connections, three rounds, ten warm-up requests per phase, 100 sequential samples, and 200 samples with a concurrency cap of eight. Request starts are paced on a 50-per-second schedule. It saves raw latency samples and failures without account, endpoint, request, or log-stream identifiers:
 
 ```sh
 BENCH_LABEL=cdkd \
@@ -140,7 +140,19 @@ bun run bench:http
 
 Set `ENDPOINT_URL` first. These measurements include network and body-read time. The client's physical location and network path were not measured or controlled. They do not establish cold-start latency, maximum throughput, AI workload behavior, or cost savings. CLI choice should not itself change the HTTP runtime.
 
-Results are pending completion of the controlled experiment. The comparison will record approval waiting separately and will not use `--no-wait` or skipped stabilization.
+[Completed measurements and raw data](./benchmarks/README.md): three update trials per tool and 900 successful HTTP samples per deployment. Median update command time was 45.664 s with cdkd versus 79.264 s through CloudFormation, excluding approval waiting. These results apply only to this POC. The comparison records approval waiting separately and does not use `--no-wait` or skipped stabilization. The CLI's printed duration can include time spent waiting at a confirmation prompt; do not compare that directly with an unattended run.
+
+For a timed update, make the same small code change in a disposable checkout and keep manual approval enabled:
+
+```sh
+NODE_DISABLE_COMPILE_CACHE=1 \
+python3 scripts/time-command.py \
+  --label cdkd-update-1 \
+  --output benchmarks/results/deployment-timings.json \
+  -- bun run deploy --profile "$AWS_PROFILE"
+```
+
+The timer preserves the interactive prompt and records total wall time, approval waiting, and wall time excluding that waiting. Failed commands are retained with their exit code. No command arguments or live AWS identifiers enter the results file.
 
 ## Cleanup: Deletes Application Resources and Evidence
 
@@ -172,7 +184,11 @@ Prepared on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2.
 | TypeScript | Passed |
 | cdkd CLI, synthesis, and staged-server smoke | Passed |
 | cdkd bootstrap and deployment dry-run | Passed in the confirmed Tokyo sandbox |
-| Direct deployment, update trials, HTTPS routes, startup logs | In progress; not yet claimed as successful |
+| Direct deployment and updates | Passed; three timed code updates and restoration kept the endpoint URL |
+| HTTPS contracts | Four routes and expected 404 passed |
+| Direct startup logs | Verified in an exact regional stream |
+| HTTP measurements | 900 measured requests per deployment, all passed |
+| Old POC cleanup | CloudFormation stack/resources and four exactly owned helper logs deleted |
 | Scalar browser rendering | Unverified |
 
 The pinned CDK library's bundled validator warns about the new Web Function resource types. The warnings remain visible; local synthesis is not a cloud deployment test. cdkd is documented as a dev/test tool. Keep this sample a POC. [cdkd getting started](https://cdkd.dev/getting-started/)

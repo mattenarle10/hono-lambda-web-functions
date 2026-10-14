@@ -10,7 +10,7 @@ This repository hosts a normal Hono HTTP server using AWS Lambda Web Functions, 
 - Use CDK-managed S3 assets and local esbuild bundling. Do not add a manual ZIP or upload step.
 - Keep immutable revision logical IDs tied to the code hash; update the endpoint before deleting the old revision.
 - Keep cdkd state scoped to `--state-prefix hono-web-poc`.
-- This is a disposable POC with public demo routes. The earlier CloudFormation API and startup logs were verified; direct-deployment verification is in progress. Do not describe it as production-ready.
+- This is a disposable POC with public demo routes. The direct API, code updates, and application startup logs were verified in a sandbox. Do not describe it as production-ready.
 
 ## Checks
 

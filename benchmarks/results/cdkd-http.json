@@ -1,0 +1,5536 @@
+{
+  "label": "cdkd",
+  "recordedAt": "2026-10-14T08:26:22.982Z",
+  "region": "ap-northeast-1",
+  "route": "/health",
+  "client": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "configuredTimeZone": "Asia/Manila"
+  },
+  "method": {
+    "rounds": 3,
+    "warmupRequestsPerPhase": 10,
+    "keepAlive": true,
+    "includesNetworkAndBodyRead": true,
+    "verifiedColdStarts": false,
+    "scheduledDispatchRatePerSecond": 50
+  },
+  "phases": [
+    {
+      "round": 1,
+      "concurrencyCap": 1,
+      "count": 100,
+      "successful": 100,
+      "failed": 0,
+      "statuses": {
+        "200": 100
+      },
+      "elapsedSeconds": 11.795,
+      "achievedRequestsPerSecond": 8.48,
+      "p50Ms": 117.4,
+      "p95Ms": 120.07,
+      "p99Ms": 123.01,
+      "reusedSockets": 100,
+      "distinctLogStreams": 1,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 117.54954099999986,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.497791,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.26683400000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.8829159999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.01575000000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.31091699999979,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.93345899999986,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.24145799999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.31012499999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.95074999999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.59191600000031,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.94079199999987,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.59562500000038,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.63487500000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.49158299999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.8159169999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.30595799999992,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.56229100000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.64541700000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.28104100000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.30274999999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.00795800000014,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.40287500000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.96691699999974,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.10187500000029,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.4349170000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.14662500000031,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.16433299999971,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.10762500000055,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.43862499999977,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.55666700000074,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.15024999999969,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.53150000000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.17200000000048,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.03700000000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.19229199999972,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.68179099999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.50799999999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.49929199999951,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.32679199999984,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.03262499999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.45908400000008,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.56316700000025,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.89370899999994,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.78579199999967,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.31049999999959,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.26466700000037,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.42583400000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.84366600000067,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.46712500000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.37862500000028,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.24704100000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.61766699999953,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.11495900000045,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.3759170000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.13204200000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.71037499999966,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.1689579999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.96283399999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.55191600000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.41095900000073,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.03004200000032,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.00429099999928,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.60941699999967,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.7283750000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.2895840000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.1314999999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.05162500000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.60375000000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.08683399999973,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.22462500000074,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.49958299999889,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.45445800000016,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.97516700000051,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.33558400000038,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.01399999999921,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.32412499999919,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.50958399999945,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.05799999999908,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.51408300000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.12504200000149,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.27275000000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.38695899999948,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.89775000000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.12079199999971,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.32016599999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.32500000000073,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.57895800000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.43233300000065,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.3962500000016,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.56804100000045,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.16558299999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.36558399999922,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.19991699999991,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.08799999999974,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.14020800000071,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.30933399999958,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.73716700000114,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.32145800000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.07004199999938,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "concurrencyCap": 8,
+      "count": 200,
+      "successful": 200,
+      "failed": 0,
+      "statuses": {
+        "200": 200
+      },
+      "elapsedSeconds": 4.057,
+      "achievedRequestsPerSecond": 49.3,
+      "p50Ms": 71.58,
+      "p95Ms": 78.85,
+      "p99Ms": 88.61,
+      "reusedSockets": 200,
+      "distinctLogStreams": 2,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 68.34283399999913,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.351666999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.0888329999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.46241700000064,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.56429200000093,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.10291599999982,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.64187499999935,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.12812500000109,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.89670899999874,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 69.88937500000065,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 83.78479199999856,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.4242919999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.57983299999978,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 83.32716700000128,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 78.70074999999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.54008299999987,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.67716699999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.62362500000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 84.00966700000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.773333000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 78.84770899999967,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 88.60720799999945,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 87.95037500000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 95.2692500000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.00837499999943,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.11816700000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 95.28095800000119,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 84.81045799999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.48145900000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.96287499999926,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 79.37879199999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 80.33095799999865,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.21908299999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.7199580000015,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.81904199999917,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.75575000000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.1568329999991,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.39183299999968,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.25166699999863,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.9155410000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.85800000000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.37716700000055,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 69.07849999999962,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.27141699999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.13045899999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.4980830000004,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.42975000000115,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.97762500000135,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.98941700000069,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.5705829999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.92383299999892,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.38875000000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.98416600000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.89216699999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.49791600000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.5700420000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.94320899999911,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.1302080000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.77087500000016,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.18866600000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.58812500000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.18933399999878,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.21433400000024,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.22187499999927,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.44054099999994,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.4394169999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.97750000000087,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.40341700000135,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.9957089999989,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.45920900000056,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.97750000000087,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.83762500000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.71599999999853,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.64512500000092,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.48899999999958,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.48162500000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.88266599999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.05583400000069,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.78654199999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.97595799999908,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.70470899999964,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.01445799999965,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.81379199999901,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.31170799999927,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.84604199999922,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.69116600000052,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.17112500000076,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.19841600000109,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.07870900000125,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.19549999999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.64524999999958,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.09200000000055,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.1645840000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.67649999999958,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.94933300000048,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.56683300000077,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.42566699999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.22833400000127,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 69.36945900000137,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.53170899999895,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.7272920000014,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.31537500000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.7659590000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.03837500000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.50391599999966,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.07620899999893,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 68.40429100000074,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.87537499999962,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.11200000000099,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.90658299999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.90691599999991,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.06412499999897,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.56462500000089,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.98279199999888,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.73908300000039,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.55920900000092,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.86954100000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.98250000000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.72350000000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.63983300000109,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.92670900000121,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.83654100000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.72208299999875,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.55233299999963,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.51258400000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.02174999999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.42233399999895,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.93283300000076,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.37020900000061,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.96550000000025,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.51291700000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.37487499999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.64929200000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.48550000000068,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.38616699999875,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 68.93625000000065,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.5638340000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.26312499999949,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.76887500000157,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 68.71141699999862,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.59624999999869,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.06412500000079,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.69520799999736,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.91449999999895,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.58112500000061,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.34179199999926,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.83387500000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.02812500000073,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.48025000000052,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.28304199999911,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.96870900000067,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.61241700000028,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.25454199999876,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.10183300000062,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.37491599999703,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.97929199999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.66558399999849,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.21099999999933,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.19095899999957,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.42687499999738,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.80158400000073,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.87954199999876,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.49954200000138,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.68620799999917,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.54920800000036,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.16895900000236,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 68.28170899999895,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.39708299999984,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.30387500000143,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.03658299999734,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.47249999999985,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.6684580000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.16741700000057,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.85525000000052,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.78604100000302,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.48233400000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.45175000000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 72.74874999999884,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.55716699999903,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 76.6246659999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.27095800000097,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.82120900000155,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.7221669999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 77.21595800000068,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.28179099999761,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.72841600000174,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 68.648459,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.76616600000125,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.74362499999916,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 70.87266699999964,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 66.2534590000032,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.66158399999767,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.61874999999782,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.31866699999955,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.57095900000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 74.82525000000169,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 73.7619999999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 71.2567909999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 67.22283299999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 75.12358299999687,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "concurrencyCap": 1,
+      "count": 100,
+      "successful": 100,
+      "failed": 0,
+      "statuses": {
+        "200": 100
+      },
+      "elapsedSeconds": 11.936,
+      "achievedRequestsPerSecond": 8.38,
+      "p50Ms": 118.73,
+      "p95Ms": 121.52,
+      "p99Ms": 122.9,
+      "reusedSockets": 100,
+      "distinctLogStreams": 2,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 118.05295800000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.79008299999987,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.0669170000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.27291700000205,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.72083300000304,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.64387499999793,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.71266599999944,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.97662500000297,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.26258300000336,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.56012499999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.66316599999845,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.35908299999937,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.54187500000262,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.97566700000243,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.51479200000176,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.25741700000071,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.85754100000122,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.20970800000214,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.26291700000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.11995799999931,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.5689999999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.36425000000236,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.71420800000124,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.27670800000124,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.734166000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.34945900000093,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.36354199999914,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.0511660000011,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.05400000000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.69000000000233,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.59545799999978,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.33687500000087,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.22691699999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.94354100000055,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.82383299999856,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.8517920000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.01420800000051,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.40666700000293,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.99283400000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.22195799999827,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.80504100000326,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.1975420000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.9968340000014,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.67383400000108,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.61412500000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.5225419999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.91108300000269,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.89970800000083,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.44525000000067,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.16220800000156,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.17212499999732,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.89050000000134,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.31975000000239,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.55779199999961,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.34516699999949,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.52458399999887,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.74733299999934,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.5358750000014,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.44695900000079,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.43862499999886,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.48574999999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.48395900000105,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.13404199999786,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.79645899999741,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.42075000000114,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.22291700000278,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.58108300000094,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.82766599999741,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.33649999999761,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.42091699999946,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.29091699999844,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.23004099999889,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.29716700000063,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.55291699999725,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.49791600000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.8257909999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.30804100000023,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.45933299999888,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.37433299999975,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.21341700000266,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.46229200000016,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.34737499999756,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.28462500000023,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.32470900000044,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.56775000000198,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.09770799999751,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.2911660000027,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.55229099999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.7847920000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.21979199999987,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.94712499999878,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.95045799999934,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.31362499999886,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.69437499999913,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.89074999999866,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.80275000000256,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.4050840000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.2432910000025,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.24649999999747,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.88550000000032,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "concurrencyCap": 8,
+      "count": 200,
+      "successful": 200,
+      "failed": 0,
+      "statuses": {
+        "200": 200
+      },
+      "elapsedSeconds": 4.096,
+      "achievedRequestsPerSecond": 48.83,
+      "p50Ms": 114.77,
+      "p95Ms": 138.92,
+      "p99Ms": 147.07,
+      "reusedSockets": 200,
+      "distinctLogStreams": 2,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 138.58220900000015,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.58483400000114,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.18170800000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 111.34958299999926,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.39154200000121,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.81325000000288,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 108.16691700000229,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 142.05333400000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.33237499999814,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.09712500000023,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.61483299999963,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.88891599999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.92762500000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.71850000000268,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.14508299999943,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.22654200000034,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.15520800000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.28433300000324,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.86520799999926,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.64658299999792,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.65558400000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.4987910000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.24037500000122,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.83612500000163,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.35570799999914,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.10520800000086,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.54266700000153,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.07379199999923,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.5682080000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.81704199999876,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.66479099999924,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.30279099999825,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.18724999999904,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.48849999999948,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.76850000000195,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.52987500000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.84408299999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.73912500000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.39900000000125,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.5535000000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.5759590000016,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.335959,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.35795800000051,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.74387500000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.05449999999837,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.91900000000169,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.26324999999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.37608399999954,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.2990000000027,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.7566250000018,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.8817909999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.61595800000214,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.65545799999745,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.3604579999992,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.3676250000026,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.56837499999892,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.43108299999585,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.015542000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.04604199999449,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.7111670000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 127.0482090000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.70804099999805,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.30366700000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.69483300000138,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.58829200000037,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.8382500000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.24350000000413,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.25612499999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.82099999999627,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.4053750000021,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.11174999999639,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.92216699999699,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.69891700000153,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.736917000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.18029200000456,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.68008299999929,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.49512500000128,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.8859999999986,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.22004199999355,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.64941700000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.64583300000231,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.67958300000464,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.7377090000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.37341600000218,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.28800000000047,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.17712500000198,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.22533300000214,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.95962500000314,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.80049999999756,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.3507499999978,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.28874999999971,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.26716700000543,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.66183399999863,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.57724999999482,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.92204099999799,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.61116699999548,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.0072499999951,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.2032920000056,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.42333299999882,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.61816700000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 103.97366599999805,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 120.03549999999814,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.343958999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 140.70858299999963,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.81145899999683,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.10970899999666,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 103.97845799999777,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.3804999999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.38020800000231,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 149.77237500000047,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.74620799999684,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.5154579999944,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.46812499999942,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.29200000000128,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 147.07212499999878,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 144.39283299999806,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 149.38666699999885,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 128.61645899999712,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 110.64920800000255,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.23312499999884,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.07829199999833,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.91579099999944,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 140.09545799999614,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.70720799999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.74962500000402,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.78304099999514,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.513082999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.18941700000141,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.04116599999543,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.91708400000061,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.32300000000396,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.92358399999648,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.4444580000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.64408299999923,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.4338329999955,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 127.34154200000194,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.23812500000349,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.91212499999529,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.51495799999975,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.4663750000036,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.86487500000658,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.65254200000345,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.6102499999979,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.78766699999687,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.79908299999806,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.04858300000342,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.65433399999893,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.6909999999989,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.41075000000274,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.74820799999725,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.60987500000192,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.94920899999852,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.20054199999868,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.28899999999703,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.74725000000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.3662919999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.89591600000131,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.88266700000531,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.02104099999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.83312500000466,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.46512499999517,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.35287500000413,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.4032090000037,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.78699999999662,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.89199999999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.13550000000396,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.20283300000301,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.0463329999984,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.32245900000271,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.53583299999445,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.30845899999986,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.55220800000097,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.32795900000201,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.57558300000528,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.87691600000107,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.21416699999827,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.0034999999989,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.86920799999643,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.16116600000532,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.27100000000064,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.278999999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.97533400000248,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.01516699999775,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.34791700000642,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 103.92958300000464,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.14504200000374,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.22041699999681,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.3136250000025,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.49204199999804,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.91133300000365,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.23025000000052,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.5449590000062,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.5243330000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.25095800000418,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.50441599999613,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.37162499999977,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.24412499999744,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 107.08345900000131,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 104.87429200000042,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.87891700000182,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "concurrencyCap": 1,
+      "count": 100,
+      "successful": 100,
+      "failed": 0,
+      "statuses": {
+        "200": 100
+      },
+      "elapsedSeconds": 13.641,
+      "achievedRequestsPerSecond": 7.33,
+      "p50Ms": 135.34,
+      "p95Ms": 139.54,
+      "p99Ms": 148.03,
+      "reusedSockets": 100,
+      "distinctLogStreams": 2,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 134.6769159999967,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.06854100000055,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.5179169999974,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.54629200000636,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.49916700000176,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.45758300000307,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.17645800000173,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.19700000000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.00429200000508,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.49358400000347,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.21962500000518,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.57850000000326,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.81070800000452,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.0518329999977,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.31862499999988,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.23999999999796,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.96199999999953,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 141.9146249999976,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 148.03066699999908,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.47920799999702,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.50950000000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.75770800000464,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.29054200000246,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.21141699999862,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.25574999999662,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.14662500000122,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.02245799999946,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.22158399999898,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.79729200000293,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.14695799999754,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.0269580000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.88375000000087,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.09754100000282,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.25733300000138,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.98075000000244,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.40724999999657,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.05333399999654,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.40458300000319,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.80920799999876,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.18504200000461,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.0270840000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.65683300000092,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.17162500000268,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.1705839999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.58245799999713,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.7100830000054,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.3505839999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.74595899999986,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 173.32904199999757,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 145.9186669999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.17666699999972,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.01316700000461,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.00712499999645,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.4739580000023,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.61737499999435,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.38287500000297,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.71816699999908,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.53937499999302,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.70950000000448,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.84949999999662,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.32508300000336,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.70375000000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.39608399999997,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.39695799999754,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.7707919999957,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.44058299999597,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.35504200000287,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.55287499999395,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 133.74291700000322,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.3347089999952,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.7901250000068,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.61875000000146,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.14904100000422,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.45954199999687,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.83658399999695,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.6466670000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.1338340000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.15779199999815,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.25029200000426,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.5399580000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.9865839999984,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.9042499999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 142.12083300000086,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.98737500000425,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.1544170000052,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.0767909999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.7326250000042,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.0595420000027,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.4734580000004,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.74229099999502,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.41249999999854,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.5795419999995,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.468832999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.40304099999776,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.8894169999985,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.3416670000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.36412500000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.3650420000049,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 133.9007500000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.24329099999886,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "concurrencyCap": 8,
+      "count": 200,
+      "successful": 200,
+      "failed": 0,
+      "statuses": {
+        "200": 200
+      },
+      "elapsedSeconds": 4.098,
+      "achievedRequestsPerSecond": 48.8,
+      "p50Ms": 125.25,
+      "p95Ms": 138.47,
+      "p99Ms": 161.25,
+      "reusedSockets": 200,
+      "distinctLogStreams": 2,
+      "samples": [
+        {
+          "status": 200,
+          "durationMs": 138.41687499999534,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.04737500000192,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.3446249999979,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.60191699999996,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 128.60929100000067,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.83470800000214,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.33499999999913,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.14658300000156,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.95358299999498,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.68995799999539,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.34887500000332,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.06254200000694,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.87337500000285,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.2846669999999,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.4407910000009,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 133.53266599999915,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.83129200000258,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.97116699999606,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.24579200000153,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.86220899999898,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.53341600000567,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.4415829999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.75787499999569,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 119.1909999999989,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.64841600000364,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.62479200000234,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.76625000000058,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.68604200000118,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.35079199999745,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.98924999999872,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.59324999999808,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.81458400000702,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.03954199999862,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.93258300000161,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.1863749999975,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.28283399999782,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.76737500000309,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.1739579999994,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.05470900000364,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.38158300000214,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.77108299999963,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.7369999999937,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.3318750000035,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.84237500000017,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.75358300000516,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.21300000000338,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.15395799999533,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.87870799999655,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.4027500000011,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.41016700000182,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.64116699999431,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.19458299999678,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.38683300000412,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.83675000000221,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.3658329999962,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.83216700000048,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.01154200000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.22924999999668,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.2314170000027,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.66808299999684,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.78904099999636,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.92512500000157,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.6305829999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.9644580000022,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 131.015542000001,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.92562499999622,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.6185420000038,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.09758399999555,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.37174999999843,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.50941700000112,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.8235829999976,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.25545799999963,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.57279199999903,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.08166700000584,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.30070799999521,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.4580829999977,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.59433300000092,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.20483300000342,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.09324999999808,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.59016699999484,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.72808299999451,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.88387499999953,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.71812499999942,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.6192499999961,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.80295900000056,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.17862500000047,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.55058299999655,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.37558400000125,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.97187499999563,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.03933300000062,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.79975000000559,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.28912499999569,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.54075000000012,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.34941699999763,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.08712500000547,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.3193339999998,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.71862500000134,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 123.80554200000188,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.49970899999607,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 131.39625000000524,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 137.47499999999854,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.14179200000217,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.5950840000005,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.5984580000004,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 122.69666600000346,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.93120799999451,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.70125000000553,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.91591699999844,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 114.48104100000637,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.1314579999962,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.70666599999822,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 161.24783300000126,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 142.21512500000244,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 158.61699999999837,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.46945899999992,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.79475000000093,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.77949999999691,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 186.04287499999919,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.68166700000438,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 178.73258300000452,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 160.72412500000064,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 141.48574999999983,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 121.26900000000023,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 145.68841599999723,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 146.10054200000013,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.44066600000224,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 139.83420900000056,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.05429200000071,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.94391599999653,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.43841699999757,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.47629199999938,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.6663750000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.90574999999808,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 131.13308300000062,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.96662500000093,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.1347919999971,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 126.31399999999849,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.346166000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.27287500000239,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.3340840000019,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.76308399999834,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.9127079999962,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.0447920000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.09325000000536,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.8969999999972,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.77587499999936,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.74504100000195,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.25329200000124,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 115.7288750000007,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.7742919999946,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.54229199999827,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.41500000000087,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.533792000002,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 138.15783300000476,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.64204200000677,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.43412499999977,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.44529200000397,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.92741699999897,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.4030419999981,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.18979200000467,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.10608299999876,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.37295799999993,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 105.79554199999984,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.90133300000161,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.78708299999562,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.63879199999792,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.73274999999558,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.3510000000024,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.38149999999587,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.85970899999666,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.66254100000515,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.6152909999946,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.80808299999626,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.19987499999843,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.94749999999476,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.76095899999927,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 112.69429199999286,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.69800000000396,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 130.15579199999775,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.49295800000255,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 124.90004200000112,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 117.07004199999938,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.17695800000365,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.25383400000283,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.015333000003,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 129.99358300000313,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 134.4838330000057,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.74295900000288,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.20400000000518,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.28304099999514,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.25458300000173,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.13608399999794,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 132.49962499999674,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 116.77141699999629,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 113.47899999999936,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 106.58858299999702,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 135.75745800000004,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 125.7373329999973,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 136.06079099999624,
+          "contractMatches": true,
+          "reusedSocket": true
+        },
+        {
+          "status": 200,
+          "durationMs": 118.55162500000006,
+          "contractMatches": true,
+          "reusedSocket": true
+        }
+      ]
+    }
+  ]
+}

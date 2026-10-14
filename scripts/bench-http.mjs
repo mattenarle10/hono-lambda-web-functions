@@ -70,7 +70,7 @@ const record = {
   region: 'ap-northeast-1',
   route: '/health',
   client: { node: process.version, platform: process.platform, arch: process.arch, configuredTimeZone: 'Asia/Manila' },
-  method: { rounds, warmupRequestsPerPhase: 10, maxDispatchRatePerSecond: rateLimit, keepAlive: true, includesNetworkAndBodyRead: true, verifiedColdStarts: false },
+  method: { rounds, warmupRequestsPerPhase: 10, scheduledDispatchRatePerSecond: rateLimit, keepAlive: true, includesNetworkAndBodyRead: true, verifiedColdStarts: false },
   phases: [],
 }
 

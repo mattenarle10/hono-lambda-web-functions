@@ -11,10 +11,10 @@ assert.equal(process.versions.node.split('.')[0], '24', 'Run the smoke check wit
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const assembly = join(root, 'cdk.out')
-const template = JSON.parse(await readFile(join(assembly, 'HonoLambdaWebStack.template.json'), 'utf8'))
+const template = JSON.parse(await readFile(join(assembly, 'HonoLambdaWebDirectStack.template.json'), 'utf8'))
 const revision = Object.values(template.Resources).find((item) => item.Type === 'AWS::Lambda::WebFunctionRevision')
 const key = revision.Properties.BuildConfig.CodeConfig.S3Object.Key.split('/').at(-1)
-const manifest = JSON.parse(await readFile(join(assembly, 'HonoLambdaWebStack.assets.json'), 'utf8'))
+const manifest = JSON.parse(await readFile(join(assembly, 'HonoLambdaWebDirectStack.assets.json'), 'utf8'))
 const assets = Object.values(manifest.files).filter((item) =>
   Object.values(item.destinations).some((destination) => destination.objectKey === key)
 )

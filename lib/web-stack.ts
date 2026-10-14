@@ -30,17 +30,17 @@ export class WebStack extends cdk.Stack {
     const packagePrefix = `packages/${code.assetHash}`
 
     const webFunction = new lambda.CfnWebFunction(this, 'WebFunction', {
-      functionName: 'hono-lambda-web-poc',
+      functionName: 'hono-lambda-web-direct-poc',
       tags: [{ key: 'Environment', value: 'poc' }],
     })
 
     const logGroup = new logs.LogGroup(this, 'AppLogs', {
-      logGroupName: '/aws/lambda/web/hono-lambda-web-poc',
+      logGroupName: '/aws/lambda/web/hono-lambda-web-direct-poc',
       retention: logs.RetentionDays.ONE_WEEK,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     })
     const localLogGroup = new logs.LogGroup(this, 'LocalAppLogs', {
-      logGroupName: '/aws/lambda/web/hono-lambda-web-poc.local',
+      logGroupName: '/aws/lambda/web/hono-lambda-web-direct-poc.local',
       retention: logs.RetentionDays.ONE_WEEK,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     })
@@ -50,7 +50,12 @@ export class WebStack extends cdk.Stack {
     })
     executionRole.addToPolicy(new iam.PolicyStatement({
       actions: ['logs:CreateLogStream', 'logs:PutLogEvents'],
-      resources: [logGroup.logGroupArn, localLogGroup.logGroupArn],
+      resources: [logGroup, localLogGroup].map((group) => this.formatArn({
+        service: 'logs',
+        resource: 'log-group',
+        resourceName: `${group.logGroupName}:*`,
+        arnFormat: cdk.ArnFormat.COLON_RESOURCE_NAME,
+      })),
     }))
     executionRole.addToPolicy(new iam.PolicyStatement({
       actions: ['logs:CreateLogGroup'],
@@ -99,7 +104,8 @@ export class WebStack extends cdk.Stack {
       retainOnDelete: true,
     })
 
-    const revision = new lambda.CfnWebFunctionRevision(this, 'Revision', {
+    // A distinct logical resource per bundle lets cdkd switch the endpoint before deleting the old revision.
+    const revision = new lambda.CfnWebFunctionRevision(this, `Revision${code.assetHash.slice(0, 12)}`, {
       functionName: webFunction.functionName,
       buildConfig: {
         codeConfig: {

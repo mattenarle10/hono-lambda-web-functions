@@ -9,7 +9,7 @@ if (!account || !/^\d{12}$/.test(account)) {
 }
 
 const app = new cdk.App()
-new WebStack(app, 'HonoLambdaWebStack', {
+new WebStack(app, 'HonoLambdaWebDirectStack', {
   env: {
     account,
     region: process.env.CDK_DEPLOY_REGION ?? 'ap-northeast-1',

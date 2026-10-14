@@ -12,11 +12,13 @@
     "start": "node build/app/index.js",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
-    "smoke": "CDK_DEPLOY_ACCOUNT=111122223333 CDK_DEPLOY_REGION=ap-northeast-1 bun run synth --quiet && node scripts/smoke.mjs",
-    "synth": "cdk synth HonoLambdaWebStack --no-lookups",
-    "diff": "cdk diff HonoLambdaWebStack --no-lookups",
-    "deploy": "cdk deploy HonoLambdaWebStack --no-lookups --require-approval any-change",
-    "destroy": "cdk destroy HonoLambdaWebStack"
+    "smoke": "CDK_DEPLOY_ACCOUNT=111122223333 CDK_DEPLOY_REGION=ap-northeast-1 bun run synth && node scripts/smoke.mjs",
+    "synth": "cdkd synth HonoLambdaWebDirectStack",
+    "diff": "cdkd diff HonoLambdaWebDirectStack --no-cfn-fallback --state-prefix hono-web-poc",
+    "deploy": "cdkd deploy HonoLambdaWebDirectStack --no-cfn-fallback --strict-getatt --require-approval any-change --state-prefix hono-web-poc",
+    "destroy": "cdkd destroy HonoLambdaWebDirectStack --state-prefix hono-web-poc",
+    "bootstrap": "cdkd bootstrap",
+    "bench:http": "node scripts/bench-http.mjs"
   },
   "dependencies": {
     "@hono/node-server": "2.0.4",
@@ -25,6 +27,7 @@
     "hono": "4.12.25"
   },
   "devDependencies": {
+    "@go-to-k/cdkd": "0.299.1",
     "@types/bun": "1.3.14",
     "@types/node": "24.19.2",
     "aws-cdk": "2.1145.0",

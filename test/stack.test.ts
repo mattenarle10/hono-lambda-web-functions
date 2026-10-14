@@ -14,11 +14,13 @@ const [revision] = Object.values(template.findResources('AWS::Lambda::WebFunctio
 const codeKey = revision.Properties.BuildConfig.CodeConfig.S3Object.Key as string
 const codeFilename = codeKey.split('/').at(-1)!
 const codePrefix = codeKey.slice(0, codeKey.lastIndexOf('/'))
+const [revisionLogicalId] = Object.keys(template.findResources('AWS::Lambda::WebFunctionRevision'))
 
 describe('Web Function infrastructure', () => {
   test('uses the HTTP-native resources and routes traffic to this revision', () => {
     template.resourceCountIs('AWS::Lambda::WebFunction', 1)
     template.resourceCountIs('AWS::Lambda::WebFunctionRevision', 1)
+    expect(revisionLogicalId).toContain(codeFilename.slice(0, 12))
     template.resourceCountIs('AWS::Lambda::WebFunctionEndpoint', 1)
     template.resourceCountIs('AWS::ApiGatewayV2::Api', 0)
 
@@ -90,7 +92,7 @@ describe('Web Function infrastructure', () => {
     })
 
     const policy = JSON.stringify(template.findResources('AWS::S3::BucketPolicy'))
-    expect(policy).toContain('web-function/hono-lambda-web-poc/revision/*')
+    expect(policy).toContain('web-function/hono-lambda-web-direct-poc/revision/*')
   })
 
   test('copies the CDK asset intact and waits for its upload and bucket policy', () => {
@@ -137,7 +139,7 @@ describe('Web Function infrastructure', () => {
   test('manages both log groups and scopes logging permissions to both', () => {
     template.resourceCountIs('AWS::Logs::LogGroup', 2)
     template.hasResourceProperties('AWS::Logs::LogGroup', {
-      LogGroupName: '/aws/lambda/web/hono-lambda-web-poc.local',
+      LogGroupName: '/aws/lambda/web/hono-lambda-web-direct-poc.local',
       RetentionInDays: 7,
     })
     const groupIds = Object.keys(template.findResources('AWS::Logs::LogGroup'))
@@ -146,7 +148,15 @@ describe('Web Function infrastructure', () => {
         Statement: Match.arrayWith([
           Match.objectLike({
             Action: ['logs:CreateLogStream', 'logs:PutLogEvents'],
-            Resource: groupIds.map((id) => ({ 'Fn::GetAtt': [id, 'Arn'] })),
+            Resource: groupIds.map((id) => ({
+              'Fn::Join': ['', [
+                'arn:',
+                { Ref: 'AWS::Partition' },
+                ':logs:ap-northeast-1:111122223333:log-group:',
+                { Ref: id },
+                ':*',
+              ]],
+            })),
           }),
           Match.objectLike({
             Action: 'logs:CreateLogGroup',

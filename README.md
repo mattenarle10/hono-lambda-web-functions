@@ -1,6 +1,6 @@
 # Hono Lambda Web Function POC with CDK
 
-A normal Node.js HTTP server, deployed through CDK's Web Function resources. This is a disposable, public API demo. The Tokyo sandbox deployment, code update, restoration, and CDK-managed asset deployment passed HTTPS checks. Startup logging and browser rendering remain unverified.
+A normal Node.js HTTP server, deployed through CDK's Web Function resources. This is a disposable, public API demo. The Tokyo sandbox deployment, code update, restoration, and CDK-managed asset deployment passed HTTPS checks. Application startup logging was verified by reading the exact regional stream. Browser rendering remains unverified.
 
 ```txt
 Client -> Web Function HTTPS endpoint -> Node.js HTTP server -> Hono
@@ -94,7 +94,7 @@ CDK also creates helper Event Functions for the S3 upload and bucket cleanup. Th
 
 Old package objects are preserved during code updates so an earlier revision's artifact is not removed while it may still be needed. Destroying this disposable stack deletes the entire dedicated bucket, including all object versions, and deletes both app log groups. Copy any evidence you need before cleanup.
 
-Web Functions write first to a `.local` companion group, including for a single-region endpoint, and then centralize asynchronously. The first logging role allowed only the central group, so the API worked while startup logs were missing. The sample now manages both groups. `logs:CreateLogGroup` uses their bare group ARNs; `logs:CreateLogStream` and `logs:PutLogEvents` use their stream wildcard ARNs. The final corrected deployment still had zero events in both groups. Startup logging remains unresolved; do not treat the policy correction as proof that logs arrived. [AWS logging guidance](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-logging.html)
+Web Functions write first to a `.local` companion group, including for a single-region endpoint, and then centralize asynchronously. The first logging role allowed only the central group, and initial searches did not show the startup message. The sample now manages both groups. `logs:CreateLogGroup` uses their bare group ARNs; `logs:CreateLogStream` and `logs:PutLogEvents` use their stream wildcard ARNs. Early searches returned no events. A later exact-stream read, using the health response's `lambda-web-logstream` header, confirmed the startup message in the `.local` group. No further permission change was made for that successful check. The earlier empty searches do not establish which configuration change affected delivery. [AWS logging guidance](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-logging.html)
 
 ## Sandbox Deployment
 
@@ -176,6 +176,23 @@ The fixed function name is `hono-lambda-web-poc` and the stack name is `HonoLamb
 
    For immediate regional troubleshooting, tail `/aws/lambda/web/hono-lambda-web-poc.local` instead. Its name is also returned as `LocalLogGroupName`. Centralized logs can arrive a few minutes later.
 
+   If a recent-window search returns no events, get the exact stream name from a successful response's `lambda-web-logstream` header. Read that stream in the regional `.local` group:
+
+   ```sh
+   curl --include --fail-with-body "$ENDPOINT_URL/health"
+   export LAMBDA_WEB_LOGSTREAM='paste-the-lambda-web-logstream-header-value'
+   aws logs get-log-events \
+     --log-group-name /aws/lambda/web/hono-lambda-web-poc.local \
+     --log-stream-name "$LAMBDA_WEB_LOGSTREAM" \
+     --start-from-head \
+     --limit 100 \
+     --no-paginate \
+     --profile "$AWS_PROFILE" \
+     --region "$CDK_DEPLOY_REGION"
+   ```
+
+   This exact-stream read confirmed the server's startup message in the sandbox. An empty early search is not proof that no logs were delivered. [AWS log correlation guidance](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-logging.html)
+
    `Active` is not an HTTP health check. A wrong entry file or listen address can still cause requests to fail. Record successful HTTPS responses and check for initialization errors. [AWS S3 deployment guide](https://docs.aws.amazon.com/lambda/latest/dg/web-functions-code-s3.html)
 
 6. Test an update without changing the route contracts. Add `c.header('x-demo-revision', 'second')` before the health handler's `return` in `src/routes/health.ts`, then run `bun run test` and `bun run deploy`. Confirm the new header at the same endpoint URL:
@@ -234,7 +251,7 @@ Prepared on 2026-10-14, on macOS Arm64. Node.js 24.19.0 was used to run the CDK-
 | CDK-managed asset deployment | New revision `Active`; original contracts passed at the same URL after asset bundling, packaging, upload, and copy |
 | HTTPS routes | All four routes returned `200` with expected content; unknown route returned `404` |
 | Code update | New revision served the temporary header at the unchanged endpoint URL |
-| Application startup logs | Zero events in both groups after the scoped policy correction; unresolved |
+| Application startup logs | Verified in the `.local` stream identified by the health response; startup message observed with `get-log-events` |
 | Scalar browser rendering | Unverified; browser automation surface was unavailable |
 | Restore | New revision removed the demo header; original contracts and unchanged URL verified |
 | Cleanup | The test POC remains deployed; the deletion procedure above is documented but not yet verified |

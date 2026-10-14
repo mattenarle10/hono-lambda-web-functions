@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800">
+<rect width="1440" height="800" fill="#ffffff"/>
+<rect x="56" y="52" width="72" height="6" rx="3" fill="#ed8c12"/>
+<text x="56" y="115" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#243247">Hono on AWS: Measured Request Latency</text>
+<text x="56" y="161" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#243247">Tokyo | Node.js 24.21.0 | ARM64 | October 15, 2026</text>
+<text x="56" y="211" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#243247">p95 latency, lower is better. Client concurrency cap: 8.</text>
+<rect x="56" y="250" width="1328" height="68" rx="8" fill="#243247"/>
+<text x="80" y="293" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Runtime</text>
+<text x="740" y="293" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Health</text>
+<text x="1012" y="293" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Database read</text>
+<rect x="56" y="318" width="1328" height="84" fill="#f3f5f7"/>
+<text x="80" y="371" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#243247">Web Functions (HTTPS)</text>
+<text x="740" y="371" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">112.03 ms</text>
+<text x="1012" y="371" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">127.88 ms</text>
+<rect x="56" y="402" width="1328" height="84" fill="#ffffff"/>
+<text x="80" y="455" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#243247">API Gateway + Lambda (HTTPS)</text>
+<text x="740" y="455" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">129.05 ms</text>
+<text x="1012" y="455" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">133.13 ms</text>
+<rect x="56" y="486" width="1328" height="84" fill="#f3f5f7"/>
+<text x="80" y="539" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#243247">ECS/Fargate + ALB (HTTP)</text>
+<text x="740" y="539" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">104.93 ms</text>
+<text x="1012" y="539" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#243247">82.12 ms</text>
+<text x="56" y="622" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#243247">300 requests per runtime per workload. Zero failures.</text>
+<text x="56" y="664" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#243247">Database read: 20 synthetic records; authentication bypassed.</text>
+<text x="56" y="717" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#243247">ECS: HTTP. Lambda paths: HTTPS. CPU and scaling differed.</text>
+<text x="56" y="755" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#243247">End-to-end sample, not a runtime, capacity, cold-start, or cost ranking.</text>
+</svg>

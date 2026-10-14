@@ -132,6 +132,8 @@ Demo settings: public `ApplicationManaged` access, two environments maximum, six
 
 ## Results
 
+The [three-way runtime experiment](./runtime-benchmark/README.md) and [October 15 results](./runtime-benchmark/results/2026-10-15/README.md) compare Web Functions, API Gateway + Lambda, and ECS/Fargate on the same Node.js/ARM64 app. All 5,400 measured requests passed. ECS used HTTP while Lambda used HTTPS; CPU and scaling differed. The historical deployment measurements below are separate.
+
 Verified on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2:
 
 - Eighteen tests, typecheck, cdkd synthesis, and the Node.js 24 staged-server smoke passed.

@@ -1,0 +1,32 @@
+{
+  "testedServerNode": "v24.21.0",
+  "clientNode": "v24.19.0",
+  "region": "ap-northeast-1",
+  "serverArchitecture": "arm64",
+  "compute": {
+    "web-function": {
+      "memoryGiB": 2,
+      "vcpus": 2,
+      "maxEnvironments": 2,
+      "maxConcurrencyPerEnvironment": 16,
+      "rateLimitRps": 100
+    },
+    "api-gateway-lambda": {
+      "memoryMiB": 2048,
+      "cpu": "proportional to memory",
+      "reservedConcurrency": null
+    },
+    "ecs-fargate": {
+      "memoryMiB": 2048,
+      "vcpus": 1,
+      "desiredTasks": 1
+    }
+  },
+  "measuredRequests": 5400,
+  "warmupRequests": 540,
+  "failedMeasuredRequests": 0,
+  "rawSamplesSha256": "ec0c1fe794469869c235be42ecb818e02fac9122836af5039d919ecd72c9cd3e",
+  "summarySha256": "ff59c7bf6995f2a3160409c5a4ad0c29e22c81a9e7723a8715de4557201b5e84",
+  "createdBenchmarkResources": 60,
+  "cleanup": "cdkd reported 59 deleted, 1 log group retained, 0 errors. Further cleanup and independent verification stopped at owner request. Original demo and shared bootstrap were outside the destroy."
+}

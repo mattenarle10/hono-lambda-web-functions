@@ -1,0 +1,214 @@
+{
+  "recordedAt": "2026-10-14T18:10:17.272Z",
+  "method": {
+    "rounds": 3,
+    "concurrencyCaps": [
+      1,
+      8,
+      16
+    ],
+    "samplesPerPhase": 100,
+    "warmupRequestsPerPhase": 10,
+    "scheduledStartsPerSecond": 40,
+    "keepAlive": true,
+    "routes": [
+      "/health",
+      "/bench/read-only-fixture"
+    ],
+    "fixtureRecords": 20,
+    "platformOrder": "Rotates each round to reduce time-order bias",
+    "authenticationMeasured": false,
+    "verifiedColdStarts": false,
+    "costMeasured": false,
+    "physicalClientLocationControlled": false,
+    "includesNetworkAndBodyRead": true,
+    "caveats": [
+      "ECS uses HTTP; Lambda paths use HTTPS. This compares native end-to-end paths, not isolated runtime latency.",
+      "Memory is configured at 2 GiB across paths; CPU and scaling settings differ and are reported separately.",
+      "Database route reads synthetic fixture records, bypassing token authentication on all three paths.",
+      "Warmup is not proof that every measured request was warm. No capacity-limit claim."
+    ]
+  },
+  "summary": [
+    {
+      "label": "web-function",
+      "route": "/health",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 103.52,
+      "p95Ms": 204.6,
+      "p99Ms": 216.47
+    },
+    {
+      "label": "web-function",
+      "route": "/health",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 102.98,
+      "p95Ms": 112.03,
+      "p99Ms": 124.59
+    },
+    {
+      "label": "web-function",
+      "route": "/health",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 99.45,
+      "p95Ms": 106.77,
+      "p99Ms": 121.87
+    },
+    {
+      "label": "web-function",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 114.35,
+      "p95Ms": 128.13,
+      "p99Ms": 134.6
+    },
+    {
+      "label": "web-function",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 104.16,
+      "p95Ms": 127.88,
+      "p99Ms": 133.4
+    },
+    {
+      "label": "web-function",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 103.84,
+      "p95Ms": 121.09,
+      "p99Ms": 130.53
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/health",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 119.5,
+      "p95Ms": 204.36,
+      "p99Ms": 206.4
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/health",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 119.13,
+      "p95Ms": 129.05,
+      "p99Ms": 130.9
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/health",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 97.59,
+      "p95Ms": 127.25,
+      "p99Ms": 128.8
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 122.38,
+      "p95Ms": 148.1,
+      "p99Ms": 202.8
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 120.38,
+      "p95Ms": 133.13,
+      "p99Ms": 144.6
+    },
+    {
+      "label": "api-gateway-lambda",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 103.01,
+      "p95Ms": 129.81,
+      "p99Ms": 133.13
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/health",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 80.15,
+      "p95Ms": 147.11,
+      "p99Ms": 180.8
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/health",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 102.59,
+      "p95Ms": 104.93,
+      "p99Ms": 123.03
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/health",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 72.28,
+      "p95Ms": 79.85,
+      "p99Ms": 96.43
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 1,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 82.91,
+      "p95Ms": 96.73,
+      "p99Ms": 104.01
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 8,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 77.67,
+      "p95Ms": 82.12,
+      "p99Ms": 98.9
+    },
+    {
+      "label": "ecs-fargate",
+      "route": "/bench/read-only-fixture",
+      "concurrencyCap": 16,
+      "n": 300,
+      "failed": 0,
+      "p50Ms": 78.21,
+      "p95Ms": 81.87,
+      "p99Ms": 92.01
+    }
+  ]
+}

@@ -133,7 +133,7 @@ Verified on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2:
 - Eighteen tests, typecheck, cdkd synthesis, and the Node.js 24 staged-server smoke passed.
 - Direct deployment, three original updates, restoration, four public HTTPS routes, expected 404, and startup logs passed.
 - Cloud reading-list save/list/mark-read passed, with an independent DynamoDB read; unauthorized, invalid-input, and missing-record cases passed.
-- Matthew confirmed the original Scalar page renders manually in a browser. The new reading-list OpenAPI contracts are checked separately.
+- Scalar rendered the new reading-list operations in Zen; its unauthenticated list request returned `401`. The authenticated browser walkthrough remains pending.
 - Each deployment path passed 900 measured HTTP requests. The old CloudFormation POC and four owned helper-log remnants were deleted.
 
 The benchmarks measured the earlier health-only code, before this reading-list expansion. Median code-update command time: **45.664 s with cdkd**, versus **79.264 s through CloudFormation**, excluding manual approval waiting. Three trials per tool. HTTP samples do not establish a CLI-caused runtime speedup or cost savings.

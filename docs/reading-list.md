@@ -109,7 +109,11 @@ This shared token is a POC shortcut. A real multi-user service needs user authen
 
 The Tokyo deployment passed save, list, and mark-read. An independent DynamoDB read confirmed the saved record's read status and expiry. All three operations rejected missing and invalid tokens; invalid input returned `400` and a missing update returned `404`. Original public routes and startup logging also passed.
 
-These are HTTP and database checks. The expanded Scalar operations are present in OpenAPI; a new browser walkthrough and sanitized screenshots are still pending.
+The expanded Scalar docs rendered in Zen, and its list-request client returned `401` without a token. The image below shows those documented operations. The authenticated save/list/mark-read browser walkthrough remains pending; the cloud HTTP and independent database checks above already passed.
+
+![Scalar showing the three reading-list operations](./images/scalar-reading-list.jpg)
+
+This is the docs overview, not a screenshot of a successful database request. The inspected image contains no endpoint domain, token, account ID, or ARN.
 
 ## What This Demonstrates
 

@@ -2,6 +2,8 @@
 
 This is one disposable POC in Tokyo, not a general performance ranking. Both paths use AWS Lambda Web Functions. The deployment engine changes; the Hono API and service settings stay the same.
 
+These measurements precede the reading-list feature. They cover the health-only source through [commit b31a50b](https://github.com/mattenarle10/hono-lambda-web-functions/tree/b31a50b), without DynamoDB, Secrets Manager, or the new AWS SDK application dependencies. The reading-list deployment and database requests are not part of these timing samples.
+
 ## Matched Code Updates
 
 Each tool deployed three versions of the same temporary `x-demo-revision` health header: `benchmark-1`, `benchmark-2`, and `benchmark-3`. Responses were checked after every update. Both used the same bundled application hashes.

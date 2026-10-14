@@ -1,5 +1,8 @@
 import { serve } from '@hono/node-server'
-import { app } from './app.js'
+import { createApp } from './app.js'
+import { createReadingList } from './reading-list/runtime.js'
+
+const app = createApp(createReadingList(process.env))
 
 const [hostname, port] = (
   process.env.AWS_LAMBDA_HTTP_ENDPOINT ?? '127.0.0.1:3000'

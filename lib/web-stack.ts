@@ -1,5 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import * as cdk from 'aws-cdk-lib'
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
+import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
 import * as iam from 'aws-cdk-lib/aws-iam'
 import * as lambda from 'aws-cdk-lib/aws-lambda'
 import * as logs from 'aws-cdk-lib/aws-logs'
@@ -67,6 +69,28 @@ export class WebStack extends cdk.Stack {
       })),
     }))
 
+    const readingList = new dynamodb.Table(this, 'ReadingList', {
+      partitionKey: { name: 'pk', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'sk', type: dynamodb.AttributeType.STRING },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      encryption: dynamodb.TableEncryption.AWS_MANAGED,
+      timeToLiveAttribute: 'expiresAt',
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    })
+    const readingListToken = new secretsmanager.Secret(this, 'ReadingListToken', {
+      description: 'Single-owner reading-list POC bearer token',
+      generateSecretString: { passwordLength: 40, excludePunctuation: true },
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    })
+    executionRole.addToPolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:PutItem', 'dynamodb:Query', 'dynamodb:UpdateItem'],
+      resources: [readingList.tableArn],
+    }))
+    executionRole.addToPolicy(new iam.PolicyStatement({
+      actions: ['secretsmanager:GetSecretValue'],
+      resources: [readingListToken.secretArn],
+    }))
+
     const codeBucket = new s3.Bucket(this, 'CodeBucket', {
       versioned: true,
       encryption: s3.BucketEncryption.S3_MANAGED,
@@ -118,6 +142,10 @@ export class WebStack extends cdk.Stack {
       },
       serviceConfig: {
         executionRoleArn: executionRole.roleArn,
+        environmentVariables: {
+          READING_LIST_TABLE: readingList.tableName,
+          READING_LIST_TOKEN_SECRET_ARN: readingListToken.secretArn,
+        },
         timeoutSeconds: 10,
         maxConcurrencyPerEnvironment: 16,
         telemetryConfig: {
@@ -126,7 +154,7 @@ export class WebStack extends cdk.Stack {
       },
     })
     revision.addResourceDependency(webFunction)
-    revision.node.addDependency(upload, codeBucket.policy!, executionRole)
+    revision.node.addDependency(upload, codeBucket.policy!, executionRole, readingList, readingListToken)
 
     const endpoint = new lambda.CfnWebFunctionEndpoint(this, 'Endpoint', {
       functionName: webFunction.functionName,
@@ -139,6 +167,8 @@ export class WebStack extends cdk.Stack {
       throttleConfig: { rateLimit: 100 },
     })
 
+    new cdk.CfnOutput(this, 'ReadingListTableName', { value: readingList.tableName })
+    new cdk.CfnOutput(this, 'ReadingListTokenSecretArn', { value: readingListToken.secretArn })
     new cdk.CfnOutput(this, 'EndpointUrl', {
       value: `https://${endpoint.attrDomainName}`,
     })

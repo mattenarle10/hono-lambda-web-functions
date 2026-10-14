@@ -4,7 +4,9 @@ This repository hosts a normal Hono HTTP server using AWS Lambda Web Functions, 
 
 ## Scope
 
-- Keep the API contracts in `src/app.ts` and `src/routes/` stable.
+- Keep the original health, profile, OpenAPI, and Scalar contracts stable. The reading-list routes add an authenticated workflow.
+- Cloud reading-list data belongs in DynamoDB. Memory mode is explicitly local and disposable; tokens come from Secrets Manager at runtime. Never log tokens or publish resolved secret identifiers.
+- Keep the historical health-only benchmarks separate from the expanded reading-list workload.
 - `src/server.ts` must listen on the AWS-supplied `AWS_LAMBDA_HTTP_ENDPOINT`.
 - Use cdkd (CDK Direct) for app deployment. AWS CDK CLI is only relevant to the earlier CloudFormation benchmark baseline.
 - Use CDK-managed S3 assets and local esbuild bundling. Do not add a manual ZIP or upload step.

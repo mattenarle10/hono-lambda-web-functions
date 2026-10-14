@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { randomUUID } from 'node:crypto'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
 import { copyFile, mkdtemp, readFile, readdir, rm } from 'node:fs/promises'
@@ -26,6 +27,7 @@ assert.deepEqual(files.sort(), ['index.js', 'package.json'])
 
 const directory = await mkdtemp(join(tmpdir(), 'hono-lambda-web-smoke-'))
 let child
+const demoToken = randomUUID()
 
 try {
   for (const name of files) {
@@ -43,7 +45,7 @@ try {
   const address = `127.0.0.1:${port}`
   child = spawn(process.execPath, ['index.js'], {
     cwd: directory,
-    env: { PATH: process.env.PATH, AWS_LAMBDA_HTTP_ENDPOINT: address },
+    env: { PATH: process.env.PATH, AWS_LAMBDA_HTTP_ENDPOINT: address, READING_LIST_MODE: 'memory', DEMO_API_TOKEN: demoToken },
     stdio: ['ignore', 'pipe', 'pipe'],
   })
 
@@ -103,6 +105,27 @@ try {
     assert.deepEqual(await response.json(), { ok: true })
   }))
 
+  assert.equal((await get('/bookmarks')).status, 401)
+  const bookmarkRequest = (path, method = 'GET', body) => fetch(`http://${address}${path}`, {
+    method,
+    headers: { Authorization: `Bearer ${demoToken}`, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+    signal: AbortSignal.timeout(5000),
+  })
+  const saved = await bookmarkRequest('/bookmarks', 'POST', {
+    title: 'Hono docs', url: 'https://hono.dev/docs/getting-started/nodejs',
+  })
+  assert.equal(saved.status, 201)
+  const item = await saved.json()
+  const list = await bookmarkRequest('/bookmarks')
+  assert.deepEqual((await list.json()).items, [item])
+  const marked = await bookmarkRequest(`/bookmarks/${item.id}/read`, 'PATCH')
+  assert.equal(marked.status, 200)
+  assert.equal((await marked.json()).status, 'read')
+  assert.ok(spec.paths['/bookmarks'].post.security)
+  assert.ok(spec.paths['/bookmarks/{id}/read'].patch)
+
+  console.log('Reading-list staged-server smoke passed: unauthorized, save, list, mark read (local memory only)')
   console.log(`CDK-staged server passed under Node.js ${process.versions.node}: supplied address, four routes, 404, eight concurrent requests`)
 } finally {
   if (child?.pid && child.exitCode === null && child.signalCode === null) {

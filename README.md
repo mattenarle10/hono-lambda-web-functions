@@ -1,6 +1,6 @@
 # Hono on Lambda Web Functions with cdkd
 
-A small Hono API running as a normal Node.js 24 HTTP server on AWS Lambda Web Functions. CDK defines the resources; **cdkd (CDK Direct)** deploys them through AWS APIs and manages state in S3.
+A reading-list API running as a normal Node.js 24 HTTP server on AWS Lambda Web Functions. CDK defines the resources; **cdkd (CDK Direct)** deploys them through AWS APIs and manages state in S3.
 
 ```txt
 Client -> Web Function HTTPS endpoint -> Node.js HTTP server -> Hono
@@ -9,7 +9,19 @@ CDK app -> cdkd -> service SDK / Cloud Control -> AWS resources
 
 This is a public, disposable POC. [cdkd is intended for dev/test](https://cdkd.dev/getting-started/).
 
-## Routes
+## Use Case: Save Links to Read Later
+
+Save a link, list saved links, and mark one read. Hono validates requests and checks a bearer token; DynamoDB persists the data. Scalar documents the workflow.
+
+| Request | Action |
+|---|---|
+| `POST /bookmarks` | Save a title and HTTP/HTTPS URL |
+| `GET /bookmarks` | List links, 20 per page |
+| `PATCH /bookmarks/{id}/read` | Mark an existing link read |
+
+All three require a token generated in Secrets Manager. [Run the local or cloud reading-list demo](./docs/reading-list.md). Local memory mode resets on restart; cloud data expires from the API after 24 hours.
+
+## Public Routes
 
 | Route | Response |
 |---|---|
@@ -118,12 +130,13 @@ Demo settings: public `ApplicationManaged` access, two environments maximum, six
 
 Verified on 2026-10-14 with Node.js 24.19.0 and Bun 1.4.2:
 
-- Nine tests, typecheck, cdkd synthesis, and staged-server smoke passed.
-- Direct deployment, three updates, restoration, four HTTPS routes, expected 404, and startup logs passed.
-- Matthew confirmed Scalar renders manually in a browser.
+- Eighteen tests, typecheck, cdkd synthesis, and the Node.js 24 staged-server smoke passed.
+- Direct deployment, three original updates, restoration, four public HTTPS routes, expected 404, and startup logs passed.
+- Cloud reading-list save/list/mark-read passed, with an independent DynamoDB read; unauthorized, invalid-input, and missing-record cases passed.
+- Matthew confirmed the original Scalar page renders manually in a browser. The new reading-list OpenAPI contracts are checked separately.
 - Each deployment path passed 900 measured HTTP requests. The old CloudFormation POC and four owned helper-log remnants were deleted.
 
-Median code-update command time: **45.664 s with cdkd**, versus **79.264 s through CloudFormation**, excluding manual approval waiting. Three trials per tool. HTTP samples do not establish a CLI-caused runtime speedup or cost savings.
+The benchmarks measured the earlier health-only code, before this reading-list expansion. Median code-update command time: **45.664 s with cdkd**, versus **79.264 s through CloudFormation**, excluding manual approval waiting. Three trials per tool. HTTP samples do not establish a CLI-caused runtime speedup or cost savings.
 
 The first direct create failed with an S3 bucket-policy `socket hang up`; rollback completed and the same configuration succeeded on retry. Root cause remains unknown. The CDK validator also warns about the new resource types; those warnings remain visible.
 
@@ -136,7 +149,7 @@ BENCH_LABEL=cdkd BENCH_OUTPUT=benchmarks/results/cdkd-http.json \
 
 ## Cleanup
 
-**Deletes app code, object versions, logs, endpoint, revisions, function, and stack roles.** Save sanitized evidence first.
+**Deletes app code, object versions, logs, endpoint, revisions, function, stack roles, the demo DynamoDB table, and token secret.** Save sanitized evidence first.
 
 1. Verify identity and inspect the owned state:
 

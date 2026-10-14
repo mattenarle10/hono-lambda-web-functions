@@ -17,6 +17,38 @@ const codePrefix = codeKey.slice(0, codeKey.lastIndexOf('/'))
 const [revisionLogicalId] = Object.keys(template.findResources('AWS::Lambda::WebFunctionRevision'))
 
 describe('Web Function infrastructure', () => {
+  test('uses persisted demo data and a generated secret with scoped runtime access', () => {
+    template.resourceCountIs('AWS::DynamoDB::Table', 1)
+    template.hasResourceProperties('AWS::DynamoDB::Table', {
+      BillingMode: 'PAY_PER_REQUEST',
+      TimeToLiveSpecification: { AttributeName: 'expiresAt', Enabled: true },
+      KeySchema: [{ AttributeName: 'pk', KeyType: 'HASH' }, { AttributeName: 'sk', KeyType: 'RANGE' }],
+    })
+    const [tableId] = Object.keys(template.findResources('AWS::DynamoDB::Table'))
+    const [secretId] = Object.keys(template.findResources('AWS::SecretsManager::Secret'))
+    template.hasResourceProperties('AWS::SecretsManager::Secret', {
+      GenerateSecretString: { PasswordLength: 40, ExcludePunctuation: true },
+    })
+    template.hasResourceProperties('AWS::Lambda::WebFunctionRevision', {
+      ServiceConfig: {
+        EnvironmentVariables: {
+          READING_LIST_TABLE: { Ref: tableId },
+          READING_LIST_TOKEN_SECRET_ARN: { Ref: secretId },
+        },
+      },
+    })
+    template.hasResourceProperties('AWS::IAM::Policy', {
+      PolicyDocument: { Statement: Match.arrayWith([
+        Match.objectLike({ Action: ['dynamodb:PutItem', 'dynamodb:Query', 'dynamodb:UpdateItem'], Resource: { 'Fn::GetAtt': [tableId, 'Arn'] } }),
+        Match.objectLike({ Action: 'secretsmanager:GetSecretValue', Resource: { Ref: secretId } }),
+      ]) },
+    })
+    const serialized = JSON.stringify(template.toJSON())
+    expect(serialized).not.toContain('DEMO_API_TOKEN')
+    expect(template.toJSON().Resources[secretId].Properties.SecretString).toBeUndefined()
+    expect(template.toJSON().Resources[tableId].DeletionPolicy).toBe('Delete')
+  })
+
   test('uses the HTTP-native resources and routes traffic to this revision', () => {
     template.resourceCountIs('AWS::Lambda::WebFunction', 1)
     template.resourceCountIs('AWS::Lambda::WebFunctionRevision', 1)
